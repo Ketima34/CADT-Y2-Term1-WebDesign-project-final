@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'BG - Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <style>
+        .font-irish { font-family: 'Irish Grover', cursive; }
+         /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+            padding: 30px 20px;
+        }
+        
+        .sidebar.active {
+            left: 0;
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            z-index: 999;
+        }
+        
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-menu a {
+            color: #9CA3AF;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .sidebar-menu a:hover {
+            color: #45A3E5;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <!-- Logo -->
+    <div class="font-irish text-5xl mb-8">
+        <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span class="text-[#FF6B3D]">B</span><span class="text-[#FF9F40]">G</span>
+    </div>
+    
+    <!-- Menu Items -->
+   <!-- Menu Items -->
+    <nav class="mt-8">
+        <ul class="space-y-1">
+            <li>
+                <a href="homePage.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="SideBar/Profile.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="SideBar/dashBorad.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="SideBar/payment.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                    <span>Payment</span>
+                </a>
+            </li>
+            <li>
+                <a href="login/signInPage.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    <span>Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div> 
+    
+</div> 
+    
+<!--Navigation Bar--> 
+<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
+    <!-- Left Section: Menu Icon and Navigation Links -->
+    <div class="flex items-center gap-8">
+        <!-- Hamburger Menu -->
+        <button class="text-white" onclick="toggleSidebar()">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+        
+        <!-- Navigation Links -->
+        <div class="flex gap-8 font-irish text-white text-xl">
+            <a href="AboutUs.html" class="hover:opacity-80 transition">About us</a>
+            <a href="#" class="hover:opacity-80 transition">Contact</a>
+            <a href="homePage.html" class="hover:opacity-80 transition">Home</a>
+        </div>
+    </div>
+    
+    <!-- Center: Search Bar -->
+    <div class="flex-1 max-w-2xl mx-8">
+        <div class="relative">
+            <input type="text" placeholder="Search..." class="w-full h-[41px] rounded-lg px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50"/>
+            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- Right Section: Student Name and Profile -->
+    <div class="flex items-center gap-3">
+        <span class="font-irish text-white text-lg">Student Name</span>
+        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
+            <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
+        </div>
+    </div>
+</nav>
+       
+        
+         
+    <div class="main">
+
+
+
+
+    </div>
+        
+
+
+
+
+
+<!--Footer-->
+<footer class="bg-[#FFE6E6] py-10">
+    <div class="container mx-auto px-6">
+        
+        <!-- Footer Navigation Links -->
+        <div class="flex justify-center items-center gap-2 mb-6 text-[#FF6B6B] text-lg font-medium">
+            <a href="#" class="hover:text-red-600 transition">About Us</a>
+            <span class="text-[#FF6B6B]">|</span>
+            <a href="#" class="hover:text-red-600 transition">Contact</a>
+            <span class="text-[#FF6B6B]">|</span>
+            <a href="#" class="hover:text-red-600 transition">Help</a>
+        </div>
+        
+        <!-- Contact Email -->
+        <div class="flex justify-center items-center gap-3 mb-3 text-gray-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                <path d="M12 12.5c0 1.5-2 1.5-2 0s2-1.5 2 0z" fill="currentColor"/>
+            </svg>
+            <span>chhoungech@gmail.com</span>
+        </div>
+        
+        <!-- Contact Phone -->
+        <div class="flex justify-center items-center gap-3 mb-8 text-gray-700">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>097 2429 246 | 071 509 6511</span>
+        </div>
+        
+        <!-- Bottom Section: Logo and Payment -->
+        <div class="flex justify-between items-center px-12">
+            <!-- Left: L'BG Logo with Copyright -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                </div>
+                <span class="font-irish text-3xl">
+                    <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span class="text-[#FF6B3D]">B</span><span class="text-[#FF9F40]">G</span>
+                </span>
+                <span class="text-gray-500 text-lg">© 2025</span>
+            </div>
+            
+            <!-- Right: Payment Methods -->
+            <div class="flex items-center gap-3">
+                <span class="text-gray-700 font-medium">We Accept:</span>
+                <div class="flex gap-2">
+                    <div class="bg-white border-2 border-[#0070BA] rounded px-3 py-1">
+                        <span class="text-[#0070BA] font-bold text-sm">PayPal</span>
+                    </div>
+                    <div class="bg-white border-2 border-[#1A1F71] rounded px-3 py-1">
+                        <span class="text-[#1A1F71] font-bold text-sm">VISA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+</script>
+</body>
+</html>
