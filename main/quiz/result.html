@@ -160,6 +160,19 @@
       margin-top: 5px;
       font-size: 14px;
     }
+    .left {
+      position: absolute;
+      top: 80px;
+      right: 10px;
+      background-color: #45A3E5;
+      border-radius: 10px;
+      border: 1px solid #212121;
+      height: 40px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 
@@ -274,8 +287,9 @@
       </div>
     </div>
   </nav>
-
-
+<div class="left">
+  <button class="next">Next</button>
+</div>
 
   <div class="main">
     <button class="title-btn">LBG SUMMARY</button>
@@ -311,11 +325,6 @@
     </div>
 
   </div>
-
-
-
-
-
 
   <!--Footer-->
   <footer class="bg-[#FFE6E6] py-10">
@@ -417,6 +426,10 @@
       localStorage.removeItem("correctQ");
       window.location.href = "add.html";
     }
+    //Next button go to home page
+  document.querySelector(".next").addEventListener("click", function () {
+  window.location.href = "/main/homePage.html";
+});
 
   </script>
 </body>
