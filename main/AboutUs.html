@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'BG - Student Dashboard</title>
+    <title>L'BG - About Us</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet"/>
+     
     <style>
+        .font-poopins {
+            font-family: 'Poppins', sans-serif ;
+        }
         .font-irish { font-family: 'Irish Grover', cursive; }
          /* Sidebar Styles */
         .sidebar {
@@ -45,26 +50,12 @@
             opacity: 1;
             visibility: visible;
         }
-        
-        .sidebar-menu {
-            list-style: none;
-            padding: 0;
-            margin-top: 40px;
-        }
-        
-        .sidebar-menu li {
-            margin-bottom: 20px;
-        }
-        
-        .sidebar-menu a {
-            color: #9CA3AF;
-            font-size: 18px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .sidebar-menu a:hover {
-            color: #45A3E5;
+
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 250px;
+                left: -250px;
+            }
         }
     </style>
 </head>
@@ -79,7 +70,6 @@
     </div>
     
     <!-- Menu Items -->
-   <!-- Menu Items -->
     <nav class="mt-8">
         <ul class="space-y-1">
             <li>
@@ -125,67 +115,99 @@
         </ul>
     </nav>
 </div> 
-    
-</div> 
-    
+
 <!--Navigation Bar--> 
-<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
-    <!-- Left Section: Menu Icon and Navigation Links -->
-    <div class="flex items-center gap-8">
-        <!-- Hamburger Menu -->
-        <button class="text-white" onclick="toggleSidebar()">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-        </button>
-        
-        <!-- Navigation Links -->
-        <div class="flex gap-8 font-irish text-white text-xl">
-            <a href="AboutUs.html" class="hover:opacity-80 transition">About us</a>
-            <a href="#" class="hover:opacity-80 transition">Contact</a>
-            <a href="homePage.html" class="hover:opacity-80 transition">Home</a>
+<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-4 md:px-6 lg:px-8">
+    <!-- Left Section: Student Name and Profile -->
+    <div class="flex items-center gap-2 md:gap-3">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
+            <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
         </div>
+        <span class="font-poopins text-white text-sm md:text-base lg:text-lg">Student Name</span>
     </div>
     
-    <!-- Center: Search Bar -->
-    <div class="flex-1 max-w-2xl mx-8">
-        <div class="relative">
-            <input type="text" placeholder="Search..." class="w-full h-[41px] rounded-lg px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50"/>
-            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Center: Search Bar - Hidden on mobile -->
+    <div class="hidden md:flex flex-1 max-w-md lg:max-w-2xl mx-4 lg:mx-8">
+        <div class="relative w-full">
+            <input type="text" placeholder="Search..." class="w-full h-[35px] lg:h-[41px] rounded-lg px-3 lg:px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base"/>
+            <svg class="w-4 h-4 lg:w-5 lg:h-5 text-gray-400 absolute right-2 lg:right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
         </div>
     </div>
     
-    <!-- Right Section: Student Name and Profile -->
-    <div class="flex items-center gap-3">
-        <span class="font-irish text-white text-lg">Student Name</span>
-        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
-            <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
+    <!-- Right Section: Navigation Links and Hamburger Menu -->
+    <div class="flex items-center gap-4 md:gap-6 lg:gap-8">
+        <!-- Navigation Links - Hidden on mobile -->
+        <div class="hidden md:flex gap-4 lg:gap-8 text-white text-sm lg:text-xl font-poopins">
+            <a href="AboutUs.html" class="hover:opacity-80 transition">About us</a>
+            <a href="#" class="hover:opacity-80 transition">Contact</a>
+            <a href="homePage.html" class="hover:opacity-80 transition">Home</a>
         </div>
+        
+        <!-- Hamburger Menu -->
+        <button class="text-white" onclick="toggleSidebar()">
+            <svg class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
     </div>
 </nav>
-       
+
+<!-- Main Content -->
+<div class="main bg-white min-h-screen">
+    <div class="w-full md:max-w-[640px] lg:max-w-[768px] xl:max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
         
-         
-    <div class="main">
-
-
-
-
+        <!-- Page Title: text-2xl (phone) / text-3xl (tablet) / text-4xl (desktop) -->
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[#45A3E5] mb-8 md:mb-12">About Us</h1>
+        
+        <!-- Divider -->
+        <hr class="border-t-2 border-gray-300 mb-8 md:mb-10">
+        
+        <!-- What is L'BG Section -->
+        <div class="mb-8 md:mb-10 lg:mb-12">
+            <!-- Section heading: text-base (phone) / text-lg (tablet) / text-xl (desktop) -->
+            <h2 class="text-base md:text-lg lg:text-xl font-semibold text-gray-800 mb-3 md:mb-4">what is L'BG ?</h2>
+            <!-- Body text: text-sm (phone) / text-base (tablet) / text-lg (desktop) -->
+            <p class="text-sm md:text-base lg:text-lg font-normal text-gray-600 leading-relaxed">
+                L'BG short fo​​r​​​​ល្បង in English, "L'BG is a learning platform that helps kids build strong math foundations through fun practice and quizzes."
+            </p>
+        </div>
+        
+        <!-- When did L'BG start Section -->
+        <div class="mb-8 md:mb-10 lg:mb-12">
+            <!-- Section heading: text-base (phone) / text-lg (tablet) / text-xl (desktop) -->
+            <h2 class="text-base md:text-lg lg:text-xl font-semibold text-gray-800 mb-3 md:mb-4">when did L'BG start ?</h2>
+            <!-- Body text: text-sm (phone) / text-base (tablet) / text-lg (desktop) -->
+            <p class="text-sm md:text-base lg:text-lg font-normal text-gray-600 leading-relaxed">
+                L'BG short for ល្បង in English, "L'BG is a learning platform that helps kids build strong math foundations through fun practice and quizzes (substraction, multiplication and division)". we provide your kid an easy practice basic math test to improve your kid ability to think. this idea to create this site is when we have webdesign project in 12-20-2025.
+            </p>
+        </div>
+        
+        <!-- Our Mission Section -->
+        <div class="mb-8 md:mb-10">
+            <div class="flex items-center gap-2 mb-3 md:mb-4">
+                <!-- Section heading: text-base (phone) / text-lg (tablet) / text-xl (desktop) -->
+                <h2 class="text-base md:text-lg lg:text-xl font-semibold text-gray-800">our Mission</h2>
+                <svg class="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+            </div>
+            <!-- Body text: text-sm (phone) / text-base (tablet) / text-lg (desktop) -->
+            <p class="text-sm md:text-base lg:text-lg font-normal text-gray-600 leading-relaxed">
+                L'BG short for ល្បង in English, "L'BG is a learning platform that helps kids build strong math foundations through fun practice and quizzes (substraction, multiplication and division)". we provide your kid an easy practice basic math test to improve your kid ability to think. we aim go give your kid all the tool that they need to know in order to survived in high school life when it come to math. we see lots of kid have trouble to do math when they went to high school because they lack of foundation
+            </p>
+        </div>
+        
     </div>
-        
-
-
-
-
+</div>
 
 <!--Footer-->
-<footer class="bg-[#FFE6E6] py-10">
-    <div class="container mx-auto px-6">
+<footer class="bg-[#FFE6E6] py-6 md:py-8 lg:py-10">
+    <div class="container mx-auto px-4 md:px-6">
         
         <!-- Footer Navigation Links -->
-        <div class="flex justify-center items-center gap-2 mb-6 text-[#FF6B6B] text-lg font-medium">
+        <div class="flex justify-center items-center gap-2 mb-4 md:mb-6 text-[#FF6B6B] text-sm md:text-base lg:text-lg font-medium">
             <a href="#" class="hover:text-red-600 transition">About Us</a>
             <span class="text-[#FF6B6B]">|</span>
             <a href="#" class="hover:text-red-600 transition">Contact</a>
@@ -194,8 +216,8 @@
         </div>
         
         <!-- Contact Email -->
-        <div class="flex justify-center items-center gap-3 mb-3 text-gray-700">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex justify-center items-center gap-2 md:gap-3 mb-2 md:mb-3 text-gray-700 text-xs md:text-sm lg:text-base">
+            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" stroke-width="2"/>
                 <path d="M12 12.5c0 1.5-2 1.5-2 0s2-1.5 2 0z" fill="currentColor"/>
             </svg>
@@ -203,41 +225,19 @@
         </div>
         
         <!-- Contact Phone -->
-        <div class="flex justify-center items-center gap-3 mb-8 text-gray-700">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <div class="flex justify-center items-center gap-2 md:gap-3 mb-6 md:mb-8 text-gray-700 text-xs md:text-sm lg:text-base">
+            <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
             </svg>
             <span>097 2429 246 | 071 509 6511</span>
         </div>
         
         <!-- Bottom Section: Logo and Payment -->
-        <div class="flex justify-between items-center px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 px-4 md:px-12">
             <!-- Left: L'BG Logo with Copyright -->
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                    </svg>
-                </div>
-                <span class="font-irish text-3xl">
-                    <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span class="text-[#FF6B3D]">B</span><span class="text-[#FF9F40]">G</span>
-                </span>
-                <span class="text-gray-500 text-lg">© 2025</span>
-            </div>
+          
             
-            <!-- Right: Payment Methods -->
-            <div class="flex items-center gap-3">
-                <span class="text-gray-700 font-medium">We Accept:</span>
-                <div class="flex gap-2">
-                    <div class="bg-white border-2 border-[#0070BA] rounded px-3 py-1">
-                        <span class="text-[#0070BA] font-bold text-sm">PayPal</span>
-                    </div>
-                    <div class="bg-white border-2 border-[#1A1F71] rounded px-3 py-1">
-                        <span class="text-[#1A1F71] font-bold text-sm">VISA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         
     </div>
 </footer>

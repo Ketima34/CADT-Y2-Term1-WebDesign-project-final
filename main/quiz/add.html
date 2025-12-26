@@ -9,7 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+   <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+     
     <style>
+        .font-poopins {
+            font-family: 'Poppins', sans-serif ;
+        }
         .font-irish {
             font-family: 'Irish Grover', cursive;
         }
@@ -187,47 +195,47 @@
 
     </div>
 
-    <!--Navigation Bar-->
-    <nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
-        <!-- Left Section: Menu Icon and Navigation Links -->
-        <div class="flex items-center gap-8">
-            <!-- Hamburger Menu -->
-            <button class="text-white" onclick="toggleSidebar()">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-
-            <!-- Navigation Links -->
-            <div class="flex gap-8 font-irish text-white text-xl">
-                <a href="AboutUs.html" class="hover:opacity-80 transition">About us</a>
-                <a href="#" class="hover:opacity-80 transition">Contact</a>
-                <a href="homePage.html" class="hover:opacity-80 transition">Home</a>
-            </div>
-        </div>
-
-        <!-- Center: Search Bar -->
-        <div class="flex-1 max-w-2xl mx-8">
-            <div class="relative">
-                <input type="text" placeholder="Search..."
-                    class="w-full h-[41px] rounded-lg px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50" />
-                <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </div>
-        </div>
-
-        <!-- Right Section: Student Name and Profile -->
-        <div class="flex items-center gap-3">
-            <span class="font-irish text-white text-lg">Student Name</span>
-            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
+   <!--Navigation Bar--> 
+<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
+    <!-- Left Section: Student Name and Profile -->
+    <div class="flex items-center gap-3">
+         <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
                 <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
             </div>
+        <span class="font-poopins text-white text-lg">Student Name</span>
+        
+    </div>
+    
+    <!-- Center: Search Bar -->
+    <div class="flex-1 max-w-2xl mx-8">
+        <div class="relative">
+            <input type="text" placeholder="Search..." class="w-full h-[41px] rounded-lg px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50"/>
+            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
         </div>
+    </div>
+    
+    <!-- Right Section: Navigation Links and Hamburger Menu -->
+    <div class="flex items-center gap-8">
+        <!-- Navigation Links -->
+        <div class="flex gap-8 font-irish text-white text-xl font-poopins ">
+            <a href="AboutUs.html" class="hover:opacity-80 transition font-poopins">About us</a>
+            <a href="#" class="hover:opacity-80 transition font-poopins">Contact</a>
+            <a href="homePage.html" class="hover:opacity-80 transition font-poopins">Home</a>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <button class="text-white" onclick="toggleSidebar()">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </div>
+</nav>
     </nav>
-    <div class="head">
+    <div class="  mt-20 mb-60   px-6">
+    <div class="head"> 
         <h2>Quiz</h2>
     </div>
     <div class="main">
@@ -243,7 +251,7 @@
         </div>
         <p id="score"></p>
     </div>
-
+</div>
 
     <!--Footer-->
     <footer class="bg-[#FFE6E6] py-10">
@@ -276,36 +284,7 @@
                 <span>097 2429 246 | 071 509 6511</span>
             </div>
 
-            <!-- Bottom Section: Logo and Payment -->
-            <div class="flex justify-between items-center px-12">
-                <!-- Left: L'BG Logo with Copyright -->
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                        </svg>
-                    </div>
-                    <span class="font-irish text-3xl">
-                        <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span
-                            class="text-[#FF6B3D]">B</span><span class="text-[#FF9F40]">G</span>
-                    </span>
-                    <span class="text-gray-500 text-lg">© 2025</span>
-                </div>
-
-                <!-- Right: Payment Methods -->
-                <div class="flex items-center gap-3">
-                    <span class="text-gray-700 font-medium">We Accept:</span>
-                    <div class="flex gap-2">
-                        <div class="bg-white border-2 border-[#0070BA] rounded px-3 py-1">
-                            <span class="text-[#0070BA] font-bold text-sm">PayPal</span>
-                        </div>
-                        <div class="bg-white border-2 border-[#1A1F71] rounded px-3 py-1">
-                            <span class="text-[#1A1F71] font-bold text-sm">VISA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
     </footer>

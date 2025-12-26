@@ -8,7 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet"/>
+     
     <style>
+        .font-poopins {
+            font-family: 'Poppins', sans-serif ;
+        }
         
         .font-irish { font-family: 'Irish Grover', cursive; }
          .sidebar {
@@ -66,57 +71,83 @@
         .sidebar-menu a:hover {
             color: #45A3E5;
         }
+
+        /* Responsive utilities */
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 250px;
+                left: -250px;
+            }
+        }
     </style>
-    </style>
+   
 </head>
 <body class="bg-white">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
     <div class="sidebar" id="sidebar">
-    <!-- Logo -->
-    <div class="font-irish text-5xl mb-8">
-        <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span class="text-[#FF6B3D]">B</span><span class="text-[#FF9F40]">G</span>
-    </div>
-    
-    <!-- Menu Items -->
-    <ul class="sidebar-menu">
-        <li><a href="leaningPage.html">Home</a></li>
-        <li><a href="#">Payment</a></li>
-    </ul> 
-</div> 
-    
-<!--Navigation Bar--> 
-<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
-    <!-- Left Section: Menu Icon and Navigation Links -->
-    <div class="flex items-center gap-8">
-        <!-- Hamburger Menu -->
-        <button class="text-white" onclick="toggleSidebar()">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-        </button>
-        
-        <!-- Navigation Links -->
-        <div class="flex gap-8 font-irish text-white text-xl">
-            <a href="AboutUs.html" class="hover:opacity-80 transition">About us</a>
-            <a href="#" class="hover:opacity-80 transition">Contact</a>
-            <a href="homePage.html" class="hover:opacity-80 transition">Home</a>
-        </div>
-    </div>
-    
-    <!-- Right Section: Logo and Buttons -->
-    <div class="flex items-center gap-4">
-        <!-- L'BG Logo -->
-        <div class="font-irish text-[56px] leading-none tracking-tight">
+        <!-- Logo -->
+        <div class="font-irish text-5xl mb-8">
             <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span class="text-[#FF6B3D]">B</span><span class="text-[#FF9F40]">G</span>
         </div>
         
-        <!-- Sign In Button -->
-        <button class="bg-[#7FD957] text-white font-irish text-xl px-8 py-2 rounded-lg hover:opacity-90 transition h-[44px]">
-            <a href="login/signInPage.html" class="">Sign In</a>
-        </button>
+        <!-- Menu Items -->
+        <nav class="mt-8">
+            <ul class="mt-[4px]">
+                <li>
+                    <a href="leaningPage.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="SideBar/leaningPayment.html" class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"> 
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
+                        <span>Payment</span>
+                    </a>
+                </li> 
+            </ul>
+        </nav>
+    </div> 
+    
+<!--Navigation Bar--> 
+<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-4 md:px-6 lg:px-8">
+    <!-- Left Section: Student Name and Profile -->
+    <div class="flex items-center gap-2 md:gap-3">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
+            <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
+        </div>
+        <span class="font-poopins text-white text-sm md:text-base lg:text-lg">Student Name</span>
+    </div>
+    
+    <!-- Center: Search Bar -->
+    <div class="flex-1 max-w-md md:max-w-xl lg:max-w-2xl mx-4 md:mx-8">
+        <div class="relative">
+            <input type="text" placeholder="Search..." class="w-full h-[35px] md:h-[38px] lg:h-[41px] rounded-lg px-3 md:px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm md:text-base"/>
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-400 absolute right-2 md:right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- Right Section: Navigation Links and Hamburger Menu -->
+    <div class="flex items-center gap-4 md:gap-6 lg:gap-8">
+        <!-- Navigation Links - Hidden on mobile -->
+        <div class="hidden md:flex gap-4 lg:gap-8 text-white text-sm md:text-base lg:text-xl font-poopins">
+            <a href="AboutUs.html" class="hover:opacity-80 transition"></a>
+            <a href="/main//login/signInPage.html" class="hover:opacity-80 transition">Sign In</a>
+            <a href="/main/login/signUpPage.html" class="hover:opacity-80 transition">Sign Up</a>
+        </div>
         
-        <!-- Sign Up Button -->
-        <button class="bg-[#FF9F40] text-white font-irish text-xl px-8 py-2 rounded-lg hover:opacity-90 transition h-[44px]">
-            <a href="login/signUpPage.html" class="">Sign Up</a>
+        <!-- Hamburger Menu -->
+        <button class="text-white" onclick="toggleSidebar()">
+            <svg class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
         </button>
     </div>
 </nav>
@@ -124,135 +155,113 @@
 <!--Main Content-->
 <main class="bg-white">
     <!-- Hero Image Section -->
-    <div class="px-7 pt-10 pb-6">
+    <div class="px-4 md:px-6 lg:px-7 pt-6 md:pt-8 lg:pt-10 pb-4 md:pb-5 lg:pb-6">
         <div class="w-full rounded-2xl overflow-hidden">
             <img src="/scr/poster.png" alt="Kids learning math together" class="w-full h-auto">
         </div>
     </div>
     
     <!-- Tagline -->
-    <div class="px-7 pb-4">
-        <p class="text-gray-800 text-base">
+    <div class="px-4 md:px-6 lg:px-7 pb-3 md:pb-4">
+        <p class="text-gray-800 text-sm md:text-base">
             Get your kid to understand basic math with us right now, when they are youth!!
         </p>
     </div>
     
     <!-- Divider Line -->
-    <div class="px-7">
+    <div class="px-4 md:px-6 lg:px-7">
         <hr class="border-gray-300">
     </div>
     
     <!-- Welcome Section -->
-    <img src="/scr/welcome.png" alt="" class="ml-5 ">
+    <img src="/scr/welcome.png" alt="" class="ml-4 md:ml-5 w-auto">
     
     <!-- Math Operation Cards -->
-    <div class="px-7 pb-16">
-        <div class="grid grid-cols-4 gap-6">
+    <div class="px-4 md:px-6 lg:px-7 pb-8 md:pb-12 lg:pb-16">
+        <!-- Responsive Grid: 1 column (mobile), 2 columns (tablet), 4 columns (desktop) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
             
             <!-- Addition Card -->
-            <div class="border-[3px] border-[#8CE4FF] rounded-2xl  bg-gradient-to-br from-[#8CE4FF] to-[#5AB9EA]  overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="relative h-[240px]  flex items-center justify-center">
-                    <!-- Plus Icon Top Left -->
-                     <img src="/scr/addition.png" alt="" class="w-full  h-full flex p-6  "/>
-                    <div class="absolute top-4 left-4 text-white text-5xl font-light">+</div>
+            <div class="border-[3px] border-[#8CE4FF] rounded-2xl bg-gradient-to-br from-[#8CE4FF] to-[#5AB9EA] overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
+                <div class="relative h-[200px] md:h-[220px] lg:h-[240px] flex items-center justify-center">
+                    <img src="/scr/addition.png" alt="" class="w-full h-full flex p-4 md:p-5 lg:p-6"/>
+                    <div class="absolute top-3 left-3 md:top-4 md:left-4 text-white text-4xl md:text-5xl font-light">+</div>
                     
-                    <!-- Title -->
-                
-                    
-                  
                     <!-- Decorative Dots Top Right -->
-                    <div class="absolute top-3 right-3 flex gap-1">
-                        <div class="w-2 h-2 bg-[#6BB8E8] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#5AB9EA] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#4AA8D8] rounded-full"></div>
+                    <div class="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1">
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#6BB8E8] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#5AB9EA] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#4AA8D8] rounded-full"></div>
                     </div>
                     
                     <!-- Decorative Elements -->
-                    <div class="absolute bottom-8 left-6 text-white/30 text-sm">a + b = c</div>
+                    <div class="absolute bottom-6 left-4 md:bottom-8 md:left-6 text-white/30 text-xs md:text-sm">a + b = c</div>
                 </div>
-                <div class="p-4 text-center flex justify-start bg-white">
-                    <p class="text-gray-800 text-xl text-base font-medium">Addition</p>
+                <div class="p-3 md:p-4 text-center flex justify-start bg-white">
+                    <p class="text-gray-800 text-base md:text-lg lg:text-xl font-medium">Addition</p>
                 </div> 
             </div>
             
             <!-- Subtraction Card -->
             <div class="border-[3px] border-[#FEEE91] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="relative h-[240px] bg-gradient-to-br from-[#FFE082] to-[#FFB74D] flex items-center justify-center">
-                                         <img src="/scr/sub.png" alt="" class="w-full  h-full flex p-6  "/>
-
-                    <!-- Minus Icon Top Left -->
-                    <div class="absolute top-4 left-4 text-white text-5xl font-light">−</div>
-                    
-                    <!-- Title -->
-                    
-                 
+                <div class="relative h-[200px] md:h-[220px] lg:h-[240px] bg-gradient-to-br from-[#FFE082] to-[#FFB74D] flex items-center justify-center">
+                    <img src="/scr/sub.png" alt="" class="w-full h-full flex p-4 md:p-5 lg:p-6"/>
+                    <div class="absolute top-3 left-3 md:top-4 md:left-4 text-white text-4xl md:text-5xl font-light">−</div>
                     
                     <!-- Decorative Dots Top Right -->
-                    <div class="absolute top-3 right-3 flex gap-1">
-                        <div class="w-2 h-2 bg-[#FFD54F] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#FFC107] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#FFB300] rounded-full"></div>
+                    <div class="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1">
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFD54F] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFC107] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFB300] rounded-full"></div>
                     </div>
                     
                     <!-- Decorative Elements -->
-                    <div class="absolute bottom-8 left-6 text-white/30 text-sm">a - b = c</div>
+                    <div class="absolute bottom-6 left-4 md:bottom-8 md:left-6 text-white/30 text-xs md:text-sm">a - b = c</div>
                 </div>
-                <div class="p-4 text-center flex justify-start bg-white">
-                    <p class="text-gray-800 text-xl  text-base font-medium">subtraction</p>
+                <div class="p-3 md:p-4 text-center flex justify-start bg-white">
+                    <p class="text-gray-800 text-base md:text-lg lg:text-xl font-medium">subtraction</p>
                 </div>
             </div>
             
             <!-- Multiplication Card -->
             <div class="border-[3px] border-[#FFA239] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="relative h-[240px] bg-gradient-to-br from-[#FFB74D] to-[#FF9800] flex items-center justify-center">
-                    <!-- Times Icon Top Left -->
-                                          <img src="/scr/mul.png" alt="" class="w-full  h-full flex p-6  "/>
-
-                    <div class="absolute top-4 left-4 text-white text-5xl font-light">×</div>
+                <div class="relative h-[200px] md:h-[220px] lg:h-[240px] bg-gradient-to-br from-[#FFB74D] to-[#FF9800] flex items-center justify-center">
+                    <img src="/scr/mul.png" alt="" class="w-full h-full flex p-4 md:p-5 lg:p-6"/>
+                    <div class="absolute top-3 left-3 md:top-4 md:left-4 text-white text-4xl md:text-5xl font-light">×</div>
                     
-                    <!-- Title -->
-                    
-                   
                     <!-- Decorative Dots Top Right -->
-                    <div class="absolute top-3 right-3 flex gap-1">
-                        <div class="w-2 h-2 bg-[#FFB74D] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#FFA726] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#FF9800] rounded-full"></div>
+                    <div class="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1">
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFB74D] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFA726] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FF9800] rounded-full"></div>
                     </div>
                     
                     <!-- Decorative Elements -->
-                    <div class="absolute bottom-8 left-6 text-white/30 text-sm">a × b = c</div>
+                    <div class="absolute bottom-6 left-4 md:bottom-8 md:left-6 text-white/30 text-xs md:text-sm">a × b = c</div>
                 </div>
-                <div class="p-4 text-center flex justify-start bg-white">
-                    <p class="text-gray-800 text-xl text-base font-medium">multiplication</p>
+                <div class="p-3 md:p-4 text-center flex justify-start bg-white">
+                    <p class="text-gray-800 text-base md:text-lg lg:text-xl font-medium">multiplication</p>
                 </div>
             </div>
             
             <!-- Division Card -->
             <div class="border-[3px] border-[#FF5656] rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
-                <div class="relative h-[240px] bg-gradient-to-br from-[#FFB3BA] to-[#FF6B9D] flex items-center justify-center">
-                    <!-- Division Icon Top Left -->
-                                          <img src="/scr/div.png" alt="" class="w-full  h-full flex p-6  "/>
-
-                    <div class="absolute top-4 left-4 text-white text-5xl font-light">÷</div>
-                    
-                    <!-- Title -->
-                    
-                    <!-- Student Icon Bottom Right -->
-                    
+                <div class="relative h-[200px] md:h-[220px] lg:h-[240px] bg-gradient-to-br from-[#FFB3BA] to-[#FF6B9D] flex items-center justify-center">
+                    <img src="/scr/div.png" alt="" class="w-full h-full flex p-4 md:p-5 lg:p-6"/>
+                    <div class="absolute top-3 left-3 md:top-4 md:left-4 text-white text-4xl md:text-5xl font-light">÷</div>
                     
                     <!-- Decorative Dots Top Right -->
-                    <div class="absolute top-3 right-3 flex gap-1">
-                        <div class="w-2 h-2 bg-[#FFB3C1] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#FF8FAB] rounded-full"></div>
-                        <div class="w-2 h-2 bg-[#FF6B9D] rounded-full"></div>
+                    <div class="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1">
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFB3C1] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FF8FAB] rounded-full"></div>
+                        <div class="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FF6B9D] rounded-full"></div>
                     </div>
                     
                     <!-- Decorative Elements -->
-                    <div class="absolute bottom-8 left-6 text-white/30 text-sm">a ÷ b = c</div>
+                    <div class="absolute bottom-6 left-4 md:bottom-8 md:left-6 text-white/30 text-xs md:text-sm">a ÷ b = c</div>
                 </div>
-                <div class="p-4  bg-white flex justify-start">
-                    <p class="text-gray-800 text-xl  text-base font-medium">Division</p>
+                <div class="p-3 md:p-4 bg-white flex justify-start">
+                    <p class="text-gray-800 text-base md:text-lg lg:text-xl font-medium">Division</p>
                 </div>
             </div>
             
@@ -261,21 +270,21 @@
 </main>
 
 <!--Footer-->
-<footer class="bg-[#FFE6E6] py-10">
-    <div class="container mx-auto px-6">
+<footer class="bg-[#FFE6E6] py-6 md:py-8 lg:py-10">
+    <div class="container mx-auto px-4 md:px-6">
         
         <!-- Footer Navigation Links -->
-        <div class="flex justify-center items-center gap-2 mb-6 text-[#FF6B6B] text-lg font-medium">
+        <div class="flex justify-center items-center gap-2 mb-4 md:mb-6 text-[#FF6B6B] text-sm md:text-base lg:text-lg font-medium">
             <a href="#" class="hover:text-red-600 transition">About Us</a>
             <span class="text-[#FF6B6B]">|</span>
-            <a href="#" class="hover:text-red-600 transition">Contact</a>
+            <a href="Contact.html" class="hover:text-red-600 transition">Contact</a>
             <span class="text-[#FF6B6B]">|</span>
             <a href="#" class="hover:text-red-600 transition">Help</a>
         </div>
         
         <!-- Contact Email -->
-        <div class="flex justify-center items-center gap-3 mb-3 text-gray-700">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <div class="flex justify-center items-center gap-2 md:gap-3 mb-2 md:mb-3 text-gray-700 text-xs md:text-sm lg:text-base">
+            <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
                 <path d="M6 10 L10 13 L14 7" stroke="currentColor" stroke-width="2" fill="none"/>
             </svg>
@@ -283,37 +292,37 @@
         </div>
         
         <!-- Contact Phone -->
-        <div class="flex justify-center items-center gap-3 mb-8 text-gray-700">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <div class="flex justify-center items-center gap-2 md:gap-3 mb-6 md:mb-8 text-gray-700 text-xs md:text-sm lg:text-base">
+            <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
             </svg>
             <span>097 2429 246 | 071 509 6511</span>
         </div>
         
         <!-- Bottom Section: Logo and Payment -->
-        <div class="flex justify-between items-center px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 px-4 md:px-12">
             <!-- Left: L'BG Logo with Copyright -->
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="flex items-center gap-2 md:gap-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
                     </svg>
                 </div>
-                <span class="font-irish text-3xl">
+                <span class="font-irish text-2xl md:text-3xl">
                     <span class="text-[#7FD957]">L</span><span class="text-[#FF69B4]">'</span><span class="text-[#FF6B3D]">B</span><span class="text-[#7FD957]">G</span>
                 </span>
-                <span class="text-gray-500 text-lg">© 2025</span>
+                <span class="text-gray-500 text-base md:text-lg">© 2025</span>
             </div>
             
             <!-- Right: Payment Methods -->
-            <div class="flex items-center gap-3">
-                <span class="text-gray-700 font-medium">We Accept:</span>
+            <div class="flex items-center gap-2 md:gap-3">
+                <span class="text-gray-700 font-medium text-xs md:text-sm lg:text-base">We Accept:</span>
                 <div class="flex gap-2">
-                    <div class="bg-white border-2 border-[#0070BA] rounded px-3 py-1">
-                        <span class="text-[#0070BA] font-bold text-sm">PayPal</span>
+                    <div class="bg-white border-2 border-[#0070BA] rounded px-2 md:px-3 py-1">
+                        <span class="text-[#0070BA] font-bold text-xs md:text-sm">PayPal</span>
                     </div>
-                    <div class="bg-white border-2 border-[#1A1F71] rounded px-3 py-1">
-                        <span class="text-[#1A1F71] font-bold text-sm">VISA</span>
+                    <div class="bg-white border-2 border-[#1A1F71] rounded px-2 md:px-3 py-1">
+                        <span class="text-[#1A1F71] font-bold text-xs md:text-sm">VISA</span>
                     </div>
                 </div>
             </div>

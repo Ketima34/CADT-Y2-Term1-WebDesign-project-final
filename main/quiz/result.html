@@ -9,7 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
-  <style>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+     
+    <style>
+        .font-poopins {
+            font-family: 'Poppins', sans-serif ;
+        }
     .font-irish {
       font-family: 'Irish Grover', cursive;
     }
@@ -211,16 +219,7 @@
             <span>Profile</span>
           </a>
         </li>
-        <li>
-          <a href="SideBar/dashBorad.html"
-            class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-            </svg>
-            <span>Dashboard</span>
-          </a>
-        </li>
+     
         <li>
           <a href="SideBar/payment.html"
             class="flex items-center gap-4 px-8 py-3.5 text-gray-700 hover:bg-white hover:text-emerald-500 transition-all font-medium">
@@ -247,52 +246,50 @@
 
   </div>
 
-  <!--Navigation Bar-->
-  <nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
-    <!-- Left Section: Menu Icon and Navigation Links -->
-    <div class="flex items-center gap-8">
-      <!-- Hamburger Menu -->
-      <button class="text-white" onclick="toggleSidebar()">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
-      <!-- Navigation Links -->
-      <div class="flex gap-8 font-irish text-white text-xl">
-        <a href="AboutUs.html" class="hover:opacity-80 transition">About us</a>
-        <a href="#" class="hover:opacity-80 transition">Contact</a>
-        <a href="homePage.html" class="hover:opacity-80 transition">Home</a>
-      </div>
+  <!--Navigation Bar--> 
+<nav class="bg-[#45A3E5] h-[68px] flex items-center justify-between px-8">
+    <!-- Left Section: Student Name and Profile -->
+    <div class="flex items-center gap-3">
+         <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
+            </div>
+        <span class="font-poopins text-white text-lg">Student Name</span>
+        
     </div>
-
+    
     <!-- Center: Search Bar -->
     <div class="flex-1 max-w-2xl mx-8">
-      <div class="relative">
-        <input type="text" placeholder="Search..."
-          class="w-full h-[41px] rounded-lg px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50" />
-        <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none"
-          stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
+        <div class="relative">
+            <input type="text" placeholder="Search..." class="w-full h-[41px] rounded-lg px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-white/50"/>
+            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+        </div>
     </div>
-
-    <!-- Right Section: Student Name and Profile -->
-    <div class="flex items-center gap-3">
-      <span class="font-irish text-white text-lg">Student Name</span>
-      <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
-        <img src="/scr/logo/l'bg.png" alt="Profile" class="w-full h-full object-cover">
-      </div>
+    
+    <!-- Right Section: Navigation Links and Hamburger Menu -->
+    <div class="flex items-center gap-8">
+        <!-- Navigation Links -->
+        <div class="flex gap-8 font-irish text-white text-xl font-poopins ">
+            <a href="AboutUs.html" class="hover:opacity-80 transition font-poopins">About us</a>
+            <a href="/main/Contact.html" class="hover:opacity-80 transition font-poopins">Contact</a>
+            <a href="homePage.html" class="hover:opacity-80 transition font-poopins">Home</a>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <button class="text-white" onclick="toggleSidebar()">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
     </div>
-  </nav>
+</nav>
+    </nav>
 <div class="left">
-  <button class="next">Next</button>
+  <button class="next">go back</button>
 </div>
 
   <div class="main">
-    <button class="title-btn">LBG SUMMARY</button>
 
     <!-- MAIN CARD -->
     <div class="card">
@@ -332,11 +329,11 @@
 
       <!-- Footer Navigation Links -->
       <div class="flex justify-center items-center gap-2 mb-6 text-[#FF6B6B] text-lg font-medium">
-        <a href="#" class="hover:text-red-600 transition">About Us</a>
+        <a href="/main/AboutUs.html" class="hover:text-red-600 transition">About Us</a>
         <span class="text-[#FF6B6B]">|</span>
-        <a href="#" class="hover:text-red-600 transition">Contact</a>
+        <a href="/main/Contact.html" class="hover:text-red-600 transition">Contact</a>
         <span class="text-[#FF6B6B]">|</span>
-        <a href="#" class="hover:text-red-600 transition">Help</a>
+        <a href="" class="hover:text-red-600 transition">Help</a>
       </div>
 
       <!-- Contact Email -->
